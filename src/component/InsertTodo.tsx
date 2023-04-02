@@ -5,7 +5,7 @@ import { useState } from "react";
 // props의 타입 설정해줘야함, props는 onAddTo 함수가 될 것임. React.FC가 제네릭 타입이기 때문에  제네릭 타입으로 지정해줘야함
 // 그래서 item 문자열 타입의 인수를 받고 반환값은 없는 onAddTo함수를 정의하여 코드의 안정성을 높임
 const InsertTodo: React.FC<{onAddTodo : (item: string) => void }>= (props) => {   // props 인자를 받아
-    const [text,setText]= useState(""); //1. 입력될 값의 useState
+    const [text,setText]= useState<string>(""); //1. 입력될 값의 useState
     
     const submitHandler = (e: React.FormEvent) => { //submithandler > 이벤트가 들어옴
         e.preventDefault(); //이벤트의 기본 동작을 취소하는 함수, 폼이 제출되는 동작을 막아 새로고침을 방지
