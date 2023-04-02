@@ -16,13 +16,13 @@ const InsertTodo: React.FC<{onAddTodo : (item: string) => void }>= (props) => { 
     };
     const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
         setText(e.currentTarget.value);  // 입력된 값으로 현재 값 변경
-    };
+    };  
 
     return(
         <div>
             <form onSubmit={submitHandler}>
                 <h3>할 일 추가</h3>
-                <input type = "text"  onChange={changeHandler}/>
+                <input type = "text" value={text} onChange={changeHandler}/>
                 <button>추가</button>
             </form>
         </div>
