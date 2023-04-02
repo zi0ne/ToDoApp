@@ -1,23 +1,21 @@
 import React from 'react';
 import {TodoListItem} from './component/Todo';
 import InsertTodo from './component/InsertTodo';
+import Todos from "./component/Todos";
+import Todo from "./utils/TodoList";
 
-const todos: Array<Todo> = [
-  {text: "집에 가기", complete: true}, {text: "침대에 눕기", complete: false}
-];
+function App(){
+  const todos =[new Todo("스터디하기"), new Todo("퇴실버튼 누르기")];
 
-const App: React.FC = () => {
+  const addTodoHandler = (item: string) =>{
+
+  }
+
   return(
     <div>
-    <InsertTodo />
-    <ul>
-    <React.Fragment>
-      <TodoListItem todo={todos[0]}/>
-      <TodoListItem todo={todos[1]}/>
-    </React.Fragment>
-    </ul>
+    <InsertTodo onAddTodo = {addTodoHandler}/>
+    <Todos items={todos}/>
     </div>
   )
-}
-
+  }
 export default App;
